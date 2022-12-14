@@ -4,6 +4,7 @@ title = 'Hosting Test - GitHub Pages'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 disableKinds = ['RSS', 'taxonomy', 'term']
+enableGitInfo = true
 
 [build]
 useResourceCacheWhen = 'never'
