@@ -1,4 +1,4 @@
-module github.com/jmooring/hosting-netlify
+module github.com/jmooring/hosting-github-pages
 
 go 1.19
 
