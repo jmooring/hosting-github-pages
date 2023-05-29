@@ -1,5 +1,5 @@
 baseURL = 'https://jmooring.github.io/hosting-github-pages/'
-languageCode = 'en-us'
+languageCode = 'en-US'
 title = 'Hosting Test - GitHub Pages'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
