@@ -1,9 +1,6 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-
-  {{ now }}
-
   {{ range site.Sections }}
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   {{ end }}
