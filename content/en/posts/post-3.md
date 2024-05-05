@@ -1,7 +1,8 @@
 +++
 title = 'Post 3 (en)'
-date = 2024-04-07T17:45:00+02:00
+date = 2024-04-27T06:33:49-06:00
 draft = false
+
 +++
 The prospector was not frightened, but he was mad! Outwitted by a snow-slide! That we were alive was no consolation to him. "Where on earth did the thing come from?" he kept repeating until daylight. Next morning we saw that to the depth of several feet about the cabin and on top of it were snow-masses, mixed with rock-fragments, broken tree-trunks, and huge wood-splinters,--the fragment remains of a snow-slide.
 
