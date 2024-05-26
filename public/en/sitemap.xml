@@ -2,32 +2,6 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="https://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jmooring.github.io/hosting-github-pages/en/posts/post-4/</loc>
-    <lastmod>2024-05-26T04:13:58-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://jmooring.github.io/hosting-github-pages/de/posts/post-4/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jmooring.github.io/hosting-github-pages/en/posts/post-4/"
-                />
-  </url><url>
-    <loc>https://jmooring.github.io/hosting-github-pages/en/posts/</loc>
-    <lastmod>2024-05-26T04:13:58-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://jmooring.github.io/hosting-github-pages/de/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jmooring.github.io/hosting-github-pages/en/posts/"
-                />
-  </url><url>
     <loc>https://jmooring.github.io/hosting-github-pages/en/posts/post-3/</loc>
     <lastmod>2024-05-05T08:17:48-07:00</lastmod>
     <xhtml:link
@@ -39,6 +13,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://jmooring.github.io/hosting-github-pages/en/posts/post-3/"
+                />
+  </url><url>
+    <loc>https://jmooring.github.io/hosting-github-pages/en/posts/</loc>
+    <lastmod>2024-05-05T08:17:48-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://jmooring.github.io/hosting-github-pages/de/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jmooring.github.io/hosting-github-pages/en/posts/"
                 />
   </url><url>
     <loc>https://jmooring.github.io/hosting-github-pages/en/</loc>
