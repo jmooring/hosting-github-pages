@@ -6,8 +6,9 @@ defaultContentLanguageInSubdir = true
 disableKinds = ['RSS', 'taxonomy', 'term']
 enableGitInfo = true
 
-[build]
-useResourceCacheWhen = 'never'
+[caches.images]
+dir = ":cacheDir/images"
+maxAge = "1440h" # 60 days
 
 [languages.en]
 contentDir = 'content/en'
