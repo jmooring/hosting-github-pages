@@ -13,3 +13,8 @@ What is tested when you build this site:
 - PostCSS (autoprefixer)
 - Module (loads github.com/jmooring/hugo-module-content)
 - Cache save/restore
+
+Results of cache test:
+
+- Initial build: 77 seconds
+- Subsequent builds: 2 seconds
