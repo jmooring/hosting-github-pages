@@ -2,7 +2,14 @@
 
 This is a test of hosting a Hugo site on GitHub Pages.
 
-The site requires:
+> [!WARNING]
+> This site contains over 1GB of images, primarily to test cache save/restore
+> performance.
 
-- The dart-sass-embedded executable to transpile Sass to CSS
-- Installation of Node.JS dependencies
+What is tested when you build this site:
+
+- Dart Sass
+- Node.js
+- PostCSS (autoprefixer)
+- Module (loads github.com/jmooring/hugo-module-content)
+- Cache save/restore
