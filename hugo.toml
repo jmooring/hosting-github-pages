@@ -5,6 +5,7 @@ defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 disableKinds = ['RSS', 'taxonomy', 'term']
 enableGitInfo = true
+timeout = '5m'
 
 [caches.images]
 dir = ":cacheDir/images"
@@ -38,4 +39,4 @@ pageRef = '/posts'
 weight = '30'
 
 [[module.imports]]
-path = "github.com/jmooring/hugo-content"
+path = "github.com/jmooring/hugo-module-content"

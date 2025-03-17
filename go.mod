@@ -1,5 +1,7 @@
 module github.com/jmooring/hosting-github-pages
 
-go 1.20
+go 1.23
 
-require github.com/jmooring/hugo-content v0.0.0-20230627062546-a808402681be // indirect
+toolchain go1.24.1
+
+require github.com/jmooring/hugo-module-content v0.1.9 // indirect

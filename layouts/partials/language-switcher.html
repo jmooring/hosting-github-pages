@@ -1,7 +1,13 @@
 {{ with .AllTranslations }}
-  <p>Languages:
-    {{ range . }}
-      <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
-    {{ end }}
-  </p>
+  <nav class="nav-inline language-switcher">
+    <ul>
+      {{ range . }}
+        {{ if eq .Language.Lang $.Language.Lang }}
+          <li><a aria-current="page" class="active" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+        {{ else }}
+          <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </nav>
 {{ end }}

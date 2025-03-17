@@ -6,10 +6,6 @@
   {{ end }}
 
   <h2>Images from global resources</h2>
+  {{ partial "gallery.html" . }}
 
-  {{ range resources.ByType "image" }}
-    {{ with .Process "resize 200x webp" }}
-      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
-    {{ end }}
-  {{ end }}
 {{ end }}
