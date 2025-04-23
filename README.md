@@ -2,6 +2,8 @@
 
 This is a test of hosting a Hugo site on GitHub Pages.
 
+Requires Hugo v0.146.7 or later.
+
 > [!WARNING]
 > This site contains over 1GB of images, primarily to test cache save/restore
 > performance.
