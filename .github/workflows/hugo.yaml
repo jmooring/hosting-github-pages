@@ -37,6 +37,9 @@ jobs:
       HUGO_VERSION: 0.148.0
       HUGO_ENVIRONMENT: production
       TZ: America/Los_Angeles
+    outputs:
+      pages_base_url: ${{ steps.pages.outputs.base_url }}   # https://user.github.io/project (no trailing slash)
+      pages_base_path: ${{ steps.pages.outputs.base_path }} # /project  (no trailing slash)
     steps:
       - name: Install Hugo CLI
         run: |
@@ -83,10 +86,61 @@ jobs:
           path: |
             ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-      - name: Upload artifact
+      - name: Upload artifact for deploy job
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      - name: Upload artifact for validate job
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-dir
+          path: ./public
+
+  # Validation job
+  validate:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          bundler-cache: true
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: publish-dir
+          path: ./
+      - name: Validate HTML and CSS
+        uses: anishathalye/proof-html@v2 # https://github.com/anishathalye/proof-html
+        with:
+          directory: ./
+          enforce_https: true
+          ignore_empty_alt: true
+          tokens: |
+            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}
+          swap_urls: |
+            ${{ format('{{ "^{0}" : "" }}', needs.build.outputs.pages_base_path) }}
+      - name: Install libxml2-utils
+        run: sudo apt-get install libxml2-utils
+      - name: Verify that RSS and sitemap are valid XML
+        run: |
+          xmllint --noout ./index.xml
+          xmllint --noout ./sitemap.xml
+      - name: Download RSS schema
+        run: wget https://raw.githubusercontent.com/jthelin/rss2schema/refs/heads/main/schema/rss-2_0.xsd
+      - name: Validate RSS
+        uses: ChristophWurst/xmllint-action@v1 # https://github.com/ChristophWurst/xmllint-action
+        with:
+          xml-file: ./index.xml
+          xml-schema-file: ./rss-2_0.xsd
+      - name: Download sitemap schema
+        run: wget https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+      - name: Validate sitemap
+        uses: ChristophWurst/xmllint-action@v1 # https://github.com/ChristophWurst/xmllint-action
+        with:
+          xml-file: ./sitemap.xml
+          xml-schema-file: ./sitemap.xsd
 
   # Deployment job
   deploy:
@@ -94,7 +148,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, validate]
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
