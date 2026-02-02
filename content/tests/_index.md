@@ -5,3 +5,5 @@ title: Tests
 ---
 
 Here's a [broken link](foo) to test the custom 404 page.
+
+Here'a a link to [/.well-known/foo.txt](/.well-known/foo.txt) to test `actions/upload-pages-artifact`.

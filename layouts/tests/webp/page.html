@@ -5,8 +5,10 @@
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 
   {{ range resources.ByType "image" }}
-    {{ with .Process "webp" }}
-      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+    {{ if reflect.IsImageResource . }}
+      {{ with .Process "webp" }}
+        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+      {{ end }}
     {{ end }}
   {{ end }}
 
