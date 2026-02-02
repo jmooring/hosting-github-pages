@@ -59,11 +59,3 @@ enableGitInfo = true
 
 [[module.imports]]
   path = 'github.com/jmooring/hugo-module-content'
-
-[[module.mounts]]
-source = 'assets'
-target = 'assets'
-
-[[module.mounts]]
-source = 'static'
-target = 'assets'
