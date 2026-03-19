@@ -5,7 +5,7 @@
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 
   {{ range resources.ByType "image" }}
-    {{ if reflect.IsImageResource . }}
+    {{ if reflect.IsImageResourceProcessable . }}
       {{ with .Process "webp" }}
         <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
       {{ end }}
